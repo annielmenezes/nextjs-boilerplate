@@ -4,10 +4,18 @@ import Main from '.'
 
 describe('Component: <Main />', () => {
   it('shold render the heading', () => {
-    render(<Main />)
+    const { container } = render(<Main />)
 
     expect(
       screen.getByRole('heading', { name: /NextJS Boilerplate/i })
     ).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
+
+  it('should render the colors correctly', () => {
+    const { container } = render(<Main />)
+
+    expect(container.firstChild).toHaveStyle({ 'background-color': '#f5f5f5' })
   })
 })
