@@ -1,6 +1,6 @@
 {
   "src/**/*": [
     "npm run lint -- --fix",
-    "npm test"
+    "npm test -- --findRelatedTests"
   ]
 }
